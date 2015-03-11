@@ -5,20 +5,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Styling/StyleSheet.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:LoginStatus ID="LoginStatus2" runat="server" />
-        <asp:DropDownList ID="DropDownList1" runat="server">
-        </asp:DropDownList>
-        <br />
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <div>
+            <div id="wrapper">
+                <div id="banner">Global Watches</div>
+                <div id="navigation">
+                    <ul id="nav">
+                        <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/Collection.aspx" runat="server">Collection</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink2" runat="server">HyperLink</asp:HyperLink></li>
+                        <li class="DirectionRight"><asp:LoginStatus ID="LoginStatus2" runat="server" /></li>
+                        <li class="DirectionRight"><asp:DropDownList ID="DropDownList1" runat="server">
+                            </asp:DropDownList></li>
+                    </ul>
+                </div>
+                <div id="content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <footer>
+                     <p>© 2015 - Philip Montagu-Evans & Martina Magnusson</p>
+                <p>Contact information: <a href="mailto:montagu-evans@hotmail.com">GlobalWatches@iRule.com</a></p>
+                </footer>
+            </div>
+        </div>
     </form>
 </body>
 </html>

@@ -1,0 +1,86 @@
+﻿body {
+    color: black;
+    font-family: Times new roman; 
+    font-size: 1rem;
+    background: #f9f2f6;
+}
+
+#wrapper {
+    width: 101.23%;
+    margin: -8px;
+}
+
+#banner {
+    margin-top: 8px;
+    padding: 10px 195px;
+    background: black;
+    color: white;
+    font-size: 4rem;
+}
+
+#navigation {
+    height: 45px;
+    background: linear-gradient(to bottom, white, lightgray, gray);
+}
+
+#nav {
+    display: block;
+    list-style: none;
+    text-align: center;
+    width: 81%;
+    margin: auto 160px;
+    padding: 0 40px;
+}
+
+    #nav ul {
+        display: none;
+        list-style: none;
+    }
+
+    #nav li {
+        font-size: 1rem;
+        float: left;
+        display: block;
+        margin-top: 15px;
+        text-transform: uppercase;
+        padding: 0 20px;
+        border-left: 1px solid white;
+    }
+
+
+
+    #nav a:link, #nav a:visited, #nav a:active {
+        display: block;
+        color: #44413e;
+        text-decoration: none;
+    }
+
+    #nav a:hover {
+        text-decoration: underline;
+        color: black;
+    }
+
+#nav li .DirectionRight {
+    float: right;/*Vill inte lägga sig åt höger :( */ 
+}
+
+#content {
+    width: 940px;
+    margin: auto;
+    padding: 30px;
+    min-height: 364.8px;
+    background-color: white;
+}
+
+footer {
+    background: black;
+    color: white;
+    font-size: 0.85rem;
+    margin-bottom: -10px;
+    padding: 1px 200px;
+    line-height: 50%;
+}
+
+p a {
+    color: lightgray;
+}

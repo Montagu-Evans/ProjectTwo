@@ -167,6 +167,7 @@
     <Content Include="Images\AirBalloon.jpg" />
     <Content Include="Images\Watches\index.gif" />
     <Content Include="Images\Watches\indexLabel.jpg" />
+    <Content Include="Styling\StyleSheet.css" />
     <Content Include="Styling\index.css" />
     <Content Include="Styling\index.html" />
     <Content Include="Pages\Login.aspx" />
@@ -210,6 +211,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Logo\tumblr_mzriqn7VKB1qz6f9yo5_500.jpg" />
     <Content Include="Styling\Login.css" />
+    <Content Include="Testsida.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Images\Watches\armani.jpg" />
     <Content Include="Images\Watches\banner.jpg" />
@@ -347,6 +349,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Testsida.aspx.cs">
+      <DependentUpon>Testsida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testsida.aspx.designer.cs">
+      <DependentUpon>Testsida.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -13,10 +13,10 @@ namespace ProjectTwo
             bool val1 = (HttpContext.Current.User != null) &&
                         HttpContext.Current.User.Identity.IsAuthenticated;
             
-            if (val1)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            //if (val1)
+            //{
+            //    Response.Redirect("Login.aspx");
+            //}
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
