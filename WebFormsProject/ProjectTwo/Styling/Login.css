@@ -1,0 +1,16 @@
+﻿body {
+    background-image: url('../Images/Watches/Gant.jpg');
+    background-repeat: no-repeat;
+    background-position: top, right;
+    background: url('../Images/Watches/gant.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+input {
+    background-color: black;
+    opacity: 0.4;
+    color: white;
+    font: initial;
+    font-family: sans-serif;
+}
