@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.Odbc;
+using System.Globalization;
 using System.Web;
+using System.Web.Providers.Entities;
 using System.Web.UI;
 using DAL;
 
@@ -10,23 +12,30 @@ namespace ProjectTwo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool val1 = (HttpContext.Current.User != null) &&
-                        HttpContext.Current.User.Identity.IsAuthenticated;
             
-            //if (val1)
+            var order = (Order) Session["order"];
+            //if (order.UserID == 0)
             //{
-            //    Response.Redirect("Login.aspx");
+            //    Server.Transfer("Login.aspx");
             //}
+
+            Label1.Text = "Välkommen, " + UserData.userName + "!";
+
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Order orders = new Order();
-            
+            var orders = new Order();
             foreach (var order in orders.OrderRows)
             {
-                DropDownList1.Items.Add(order.ArticleID.ToString());
+                DropDownList1.Items.Add(order.ArticleID.ToString(CultureInfo.InvariantCulture));
             }
+        }
+
+        protected void ButtonLogOut_Click(object sender, EventArgs e)
+        {
+            var order = (Order) Session["order"];
+            order.UserID = 0;
         }
     }
 }

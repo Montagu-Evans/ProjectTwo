@@ -1,31 +1,32 @@
 ﻿using System;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Services.Description;
+using System.Web.UI.WebControls;
 using DAL;
 
 namespace ProjectTwo
 {
     public partial class Collection : System.Web.UI.Page
     {
+        private DropDownList dropDownList;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Master != null) dropDownList = (DropDownList)Master.FindControl("DropDownList1");
+            var order = (Order)Session["order"];
 
+            foreach (var item in order.OrderRows)
+            {
+                dropDownList.Items.Add(item.ProductName + " Qty: " + item.Quantity);
+            }
         }
 
-        protected void ButtonVarukorg_Click(object sender, EventArgs e)
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            Order order = new Order();
-            
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        protected void ButtonVarukorg_Click1(object sender, EventArgs e)
-        {
-            Order order = new Order();
-            OrderRow orderRow = new OrderRow();
-            order.OrderRows.Add(orderRow);
+            GridViewRow row = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
+            var index = row.RowIndex;
+            var test = row.Cells[0].Text;
         }
     }
 }

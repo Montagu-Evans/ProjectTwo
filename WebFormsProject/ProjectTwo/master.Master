@@ -16,10 +16,15 @@
                 <div id="banner">Global Watches</div>
                 <div id="navigation">
                     <ul id="nav">
-                        <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/Collection.aspx" runat="server">Collection</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="HyperLink2" runat="server">HyperLink</asp:HyperLink></li>
-                        <li class="DirectionRight"><asp:LoginStatus ID="LoginStatus2" runat="server" /></li>
-                        <li class="DirectionRight"><asp:DropDownList ID="DropDownList1" runat="server">
+                        <li><a href="Collection.aspx">Hem</a></li>
+                        <li><a href="Orders">Gå till kassa</a></li>
+                    </ul>
+                    <ul id="navRight">
+                        <li><asp:Button ID="ButtonLogOut" runat="server" Text="LOGOUT" BorderStyle="None" OnClick="ButtonLogOut_Click" style="background: linear-gradient(to bottom, white, lightgray, gray)"/>
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                        </li>
+                        <li><asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:ListItem>Din varukorg</asp:ListItem>
                             </asp:DropDownList></li>
                     </ul>
                 </div>
@@ -27,9 +32,9 @@
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
-                <footer>
-                     <p>© 2015 - Philip Montagu-Evans & Martina Magnusson</p>
-                <p>Contact information: <a href="mailto:montagu-evans@hotmail.com">GlobalWatches@iRule.com</a></p>
+                 <footer>
+                <p>© 2015 - Philip Montagu-Evans & Martina Magnusson</p>
+                <p>Contact information: <a href="mailto:montagu-evans@hotmail.com">GlobalWatches@weRule.com</a></p>
                 </footer>
             </div>
         </div>

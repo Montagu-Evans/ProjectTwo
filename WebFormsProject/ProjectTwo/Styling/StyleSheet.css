@@ -2,7 +2,9 @@
     color: black;
     font-family: Times new roman; 
     font-size: 1rem;
-    background: #f9f2f6;
+    background: #f9f2f6 url('../Images/Watches/gant.jpg') no-repeat center fixed;
+    -ms-background-size: cover;
+    background-size: cover;
 }
 
 #wrapper {
@@ -16,6 +18,8 @@
     background: black;
     color: white;
     font-size: 4rem;
+    -ms-opacity: 0.7;
+    opacity: 0.7;
 }
 
 #navigation {
@@ -23,7 +27,7 @@
     background: linear-gradient(to bottom, white, lightgray, gray);
 }
 
-#nav {
+#nav, #navRight {
     display: block;
     list-style: none;
     text-align: center;
@@ -32,7 +36,7 @@
     padding: 0 40px;
 }
 
-    #nav ul {
+    #nav ul, #navRight ul {
         display: none;
         list-style: none;
     }
@@ -40,7 +44,17 @@
     #nav li {
         font-size: 1rem;
         float: left;
-        display: block;
+        display: inline;
+        margin-top: 15px;
+        text-transform: uppercase;
+        padding: 0 20px;
+        border-left: 1px solid white;
+    }
+
+    #navRight li {
+        font-size: 1rem;
+        float: right;
+        display: inline;
         margin-top: 15px;
         text-transform: uppercase;
         padding: 0 20px;
@@ -49,38 +63,52 @@
 
 
 
-    #nav a:link, #nav a:visited, #nav a:active {
-        display: block;
+    #nav a:link, #nav a:visited, #nav a:active,
+    #navRight a:link, a:visited, a:active {
+        display: inline;
         color: #44413e;
         text-decoration: none;
     }
 
-    #nav a:hover {
+    #nav a:hover, #navRight a:hover {
         text-decoration: underline;
         color: black;
     }
 
-#nav li .DirectionRight {
-    float: right;/*Vill inte lägga sig åt höger :( */ 
-}
 
 #content {
-    width: 940px;
+    width: 990px;
     margin: auto;
     padding: 30px;
-    min-height: 364.8px;
+    min-height: 660px;
     background-color: white;
+    -ms-opacity: 0.5;
+    opacity: 0.9;
 }
 
 footer {
     background: black;
     color: white;
+    width: 100%;
     font-size: 0.85rem;
-    margin-bottom: -10px;
-    padding: 1px 200px;
+    padding: 20px 200px;
     line-height: 50%;
+    bottom: 0;
+    position: absolute;
+    -ms-opacity: 0.7;
+    opacity: 0.7;
+}
+
+footer a:hover {
+    color: hotpink;
 }
 
 p a {
     color: lightgray;
+}
+
+#navRight #buttonLogOut {
+    -ms-opacity: 0;
+    opacity: 0;
+    color: blue;
 }

@@ -147,6 +147,7 @@
   <ItemGroup>
     <Content Include="Bin-katalog\DAL.dll" />
     <Content Include="Bin-katalog\DAL.pdb" />
+    <Content Include="MySession.aspx" />
     <Content Include="Pages\Collection.aspx" />
     <Content Include="Pages\About.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -178,6 +179,7 @@
     <Content Include="Account\Web.config" />
     <Content Include="master.Master" />
     <Content Include="Bin-katalog\DAL.dll.config" />
+    <Content Include="WebForm2.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -211,7 +213,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Logo\tumblr_mzriqn7VKB1qz6f9yo5_500.jpg" />
     <Content Include="Styling\Login.css" />
-    <Content Include="Testsida.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Images\Watches\armani.jpg" />
     <Content Include="Images\Watches\banner.jpg" />
@@ -298,6 +299,13 @@
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="MySession.aspx.cs">
+      <DependentUpon>MySession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MySession.aspx.designer.cs">
+      <DependentUpon>MySession.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Collection.aspx.cs">
       <DependentUpon>Collection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -349,19 +357,19 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="Testsida.aspx.cs">
-      <DependentUpon>Testsida.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Testsida.aspx.designer.cs">
-      <DependentUpon>Testsida.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

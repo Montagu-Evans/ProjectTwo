@@ -14,17 +14,13 @@ namespace ProjectTwo
 
         protected void Application_Start(object sender, EventArgs e)
         {
-           
+            //ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
             Order order = new Order();
-            //Session["currentOrder"] = new Order("", "", "", "");
-
-            //För att sedan kunna hämta det i vilken code-behind som helst så gör följande:
-           //Order currentOrder = (Order) Session["currentOrder"];
-           //currentOrder.FirstName = "Kalle";
+            Session["order"] = new Order();
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -44,12 +40,12 @@ namespace ProjectTwo
 
         protected void Session_End(object sender, EventArgs e)
         {
-
+           Session["order"] = null;
         }
 
         protected void Application_End(object sender, EventArgs e)
         {
-
+           //Session["order"] = null;
         }
     }
 }
