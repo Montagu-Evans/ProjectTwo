@@ -14,11 +14,12 @@ namespace ProjectTwo
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Master != null) dropDownList = (DropDownList)Master.FindControl("DropDownList1");
+            dropDownList.ClearSelection();
             var order = (Order)Session["order"];
-
+           
             foreach (var item in order.OrderRows)
             {
-                dropDownList.Items.Add(item.ProductName + " Qty: " + item.Quantity);
+                dropDownList.Items.Add(item.ProductName + " Qty: " + ++item.Quantity);
             }
         }
 
@@ -26,7 +27,11 @@ namespace ProjectTwo
         {
             GridViewRow row = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
             var index = row.RowIndex;
-            var test = row.Cells[0].Text;
+            var product = row.Cells[0].Text;
+            var price = double.Parse(row.Cells[1].Text);
+            Order order = (Order)Session["order"];
+            order.OrderRows.Add(new OrderRow(productName: product));
+            Page_Load(sender, e);
         }
     }
 }

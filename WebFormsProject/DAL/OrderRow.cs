@@ -11,18 +11,18 @@ namespace DAL
         public int ArticleID { get; set; }
         public int Quantity { get; set; }
         public string ProductName { get; set; }
-        public decimal Price { get; set; }
+        public decimal ProductPrice { get; set; }
 
         public OrderRow(string productName="", decimal price=0, int articleID=0, int quantity=0)
         {
             ProductName = productName;
-            Price = price;
+            ProductPrice = price;
             ArticleID = articleID;
             Quantity = quantity;
         }
         public override string ToString()
         {
-            return string.Format("{0}, {1}, {2}, {3}", ArticleID, Quantity, ProductName, Price);
+            return string.Format("{0}, {1}, {2}, {3}", ArticleID, Quantity, ProductName, ProductPrice);
         }
     }
 }

@@ -27,11 +27,10 @@
     background: linear-gradient(to bottom, white, lightgray, gray);
 }
 
-#nav, #navRight {
+#nav, #navRight{
     display: block;
     list-style: none;
     text-align: center;
-    width: 81%;
     margin: auto 160px;
     padding: 0 40px;
 }
@@ -79,8 +78,9 @@
 #content {
     width: 990px;
     margin: auto;
+    margin-bottom: -8px;
     padding: 30px;
-    min-height: 660px;
+    height: 500px;
     background-color: white;
     -ms-opacity: 0.5;
     opacity: 0.9;
@@ -89,12 +89,11 @@
 footer {
     background: black;
     color: white;
-    width: 100%;
     font-size: 0.85rem;
     padding: 20px 200px;
     line-height: 50%;
-    bottom: 0;
-    position: absolute;
+    bottom: -8px;
+    position: relative;
     -ms-opacity: 0.7;
     opacity: 0.7;
 }
@@ -105,10 +104,4 @@ footer a:hover {
 
 p a {
     color: lightgray;
-}
-
-#navRight #buttonLogOut {
-    -ms-opacity: 0;
-    opacity: 0;
-    color: blue;
 }
