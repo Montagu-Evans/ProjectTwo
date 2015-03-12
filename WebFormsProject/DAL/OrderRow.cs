@@ -13,7 +13,7 @@ namespace DAL
         public string ProductName { get; set; }
         public decimal ProductPrice { get; set; }
 
-        public OrderRow(string productName="", decimal price=0, int articleID=0, int quantity=0)
+        public OrderRow(string productName="", decimal price=0, int articleID=0, int quantity=1)
         {
             ProductName = productName;
             ProductPrice = price;

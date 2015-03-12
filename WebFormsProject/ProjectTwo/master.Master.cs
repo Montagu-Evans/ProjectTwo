@@ -26,10 +26,10 @@ namespace ProjectTwo
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var orders = new Order();
-            foreach (var order in orders.OrderRows)
-            {
-                DropDownList1.Items.Add(order.ArticleID.ToString(CultureInfo.InvariantCulture));
-            }
+            //foreach (var order in orders.OrderRows)
+            //{
+            //    DropDownList1.Items.Add(order.ArticleID.ToString(CultureInfo.InvariantCulture));
+            //}
         }
 
         protected void ButtonLogOut_Click(object sender, EventArgs e)

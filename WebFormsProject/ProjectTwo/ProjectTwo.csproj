@@ -147,6 +147,7 @@
   <ItemGroup>
     <Content Include="Bin-katalog\DAL.dll" />
     <Content Include="Bin-katalog\DAL.pdb" />
+    <Content Include="Kassorskan.aspx" />
     <Content Include="MySession.aspx" />
     <Content Include="Pages\Collection.aspx" />
     <Content Include="Pages\About.aspx" />
@@ -299,6 +300,13 @@
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Kassorskan.aspx.cs">
+      <DependentUpon>Kassorskan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kassorskan.aspx.designer.cs">
+      <DependentUpon>Kassorskan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MySession.aspx.cs">
       <DependentUpon>MySession.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
