@@ -27,13 +27,14 @@ namespace DAL
             Address = address;
             City = city;
             Zip = zip;
+            userID = UserData.userID;
             UserID = userID;
         }
 
         public void Insert()
         {
             OrderHeadTableAdapter orderHeadTable = new OrderHeadTableAdapter();
-            orderHeadTable.Insert(UserData.userID, long.Parse(Zip), Address, City, false);
+            orderHeadTable.Insert(UserID, long.Parse(Zip), Address, City, false);
         }
         public override string ToString()
         {

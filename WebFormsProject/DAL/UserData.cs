@@ -15,7 +15,7 @@ namespace DAL
 {
     public static class UserData
     {
-          [ForeignKey("userID")]
+        [ForeignKey("userID")]
         public static string userName;
         public static int userID;
         public static int Authenticate(string username, string password)
@@ -23,30 +23,28 @@ namespace DAL
             userName = username;
             UsersTableAdapter users = new UsersTableAdapter();
             var user = users.GetData(password, username);
-          
-            //users.Fill(table, password, username);
-            //userID = int.Parse(id);
-            return user.Count;
+            userID = 0;
+            using (var conn = DB.GetSqlConnection())
+            {
+                using (var command = conn.CreateCommand())
+                {
+                    command.CommandText = @"SELECT  [UserID] FROM [Clocks].[dbo].[Users] WHERE [Username] = @username AND [Password] = @password";
+                    command.Parameters.Add("username", SqlDbType.NVarChar, 50).Value = username;
+                    command.Parameters.Add("password", SqlDbType.NVarChar, 20).Value = password;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        userID = Load(reader);
+                    }
+                }
+            }
+            return userID;
         }
 
-        public static void GetUserID()
+        public static int Load(SqlDataReader reader)
         {
-            DataSet.UsersDataTable table = new DataSet.UsersDataTable();
-            var id = table.Select(@" SELECT [UserID]
-                                            FROM [Clocks].[dbo].[Users]
-                                            where [Username] = @Username");
-            userID = int.Parse(table.UserIDColumn.ColumnName);
-//            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[@"Data Source=.\SQLEXPRESS;Initial Catalog=Clocks;Integrated Security=True"].ConnectionString);
-//            con.Open();
-//            SqlCommand cmd = new SqlCommand( @" SELECT [UserID]
-//                                            FROM [Clocks].[dbo].[Users]
-//                                            where [Username] = @Username", con);
-//            cmd.Parameters.AddWithValue("@Username", userName);
-//            SqlDataAdapter da = new SqlDataAdapter(cmd);
-//            DataTable dt = new DataTable();
-//            da.Fill(dt);
-//            userID = cmd.ExecuteNonQuery();
-//           // UsersTableAdapter users = new UsersTableAdapter();
+            var UserID = int.Parse(reader["UserID"].ToString());
+            return UserID;
         }
     }
 }
