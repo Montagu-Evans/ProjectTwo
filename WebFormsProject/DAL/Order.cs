@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,11 @@ using DataSet = DAL;
 
 namespace DAL
 {
+
     public class Order
     {
+      
+       // public virtual ApplicationUser User { get; set; }
         public List<OrderRow> OrderRows { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
@@ -40,5 +44,9 @@ namespace DAL
             }
             return string.Format("Address: {0},\tCity: {1},\tZip: {2},\tOrder: {3}", Address, City, Zip, order);
         }
+    }
+
+    public class ApplicationUser
+    {
     }
 }
