@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.DataSetTableAdapters;
+using DataSet = DAL; 
 
 namespace DAL
 {
@@ -24,6 +26,11 @@ namespace DAL
             UserID = userID;
         }
 
+        public void Insert()
+        {
+            OrderHeadTableAdapter orderHeadTable = new OrderHeadTableAdapter();
+            orderHeadTable.Insert(UserData.userID, long.Parse(Zip), Address, City, false);
+        }
         public override string ToString()
         {
             string order = "";

@@ -14,10 +14,10 @@ namespace ProjectTwo
         {
             
             var order = (Order) Session["order"];
-            //if (order.UserID == 0)
-            //{
-            //    Server.Transfer("Login.aspx");
-            //}
+            if (order.UserID == 0)
+            {
+                Server.Transfer("Login.aspx");
+            }
 
             Label1.Text = "Välkommen, " + UserData.userName + "!";
 

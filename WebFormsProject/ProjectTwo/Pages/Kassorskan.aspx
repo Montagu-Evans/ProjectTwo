@@ -26,24 +26,24 @@
         <tr>
             <td class="auto-style7">Adress:</td>
             <td class="auto-style8">
-                <asp:TextBox ID="TextBoxAdress" runat="server" style="margin-bottom: 0px"></asp:TextBox>
+                <asp:TextBox ID="TextBoxAddress" runat="server" style="margin-bottom: 0px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style7">Postkod:</td>
             <td class="auto-style8">
-                <asp:TextBox ID="TextBoxPostkod" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBoxZip" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style7">Postort:</td>
             <td class="auto-style8">
-                <asp:TextBox ID="TextBoxPostort" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBoxCity" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">
-                <asp:Button ID="ButtonOrder" runat="server" Text="Beställ order" />
+                <asp:Button ID="ButtonOrder" runat="server" Text="Beställ order" OnClick="ButtonOrder_Click" />
             </td>
             <td class="auto-style4">&nbsp;</td>
         </tr>

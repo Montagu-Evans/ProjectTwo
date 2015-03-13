@@ -35,7 +35,8 @@ namespace DAL
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-             UsersTableAdapter users = new UsersTableAdapter();
+            userID = cmd.ExecuteNonQuery();
+           // UsersTableAdapter users = new UsersTableAdapter();
         }
     }
 }
