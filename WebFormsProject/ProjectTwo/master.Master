@@ -17,7 +17,7 @@
                 <div id="navigation">
                     <ul id="nav">
                         <li><a href="Collection.aspx">Hem</a></li>
-                        <li><a href="Orders">Gå till kassa</a></li>
+                        <li><a href="Kassorskan.aspx">Gå till kassa</a></li>
                     </ul>
                     <ul id="navRight">
                         <li><asp:Button ID="ButtonLogOut" runat="server" Text="LOGOUT" BorderStyle="None" OnClick="ButtonLogOut_Click" style="background: linear-gradient(to bottom, white, lightgray, gray)"/>
