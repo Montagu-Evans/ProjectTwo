@@ -37,7 +37,7 @@ namespace ProjectTwo
         protected void ButtonOrder_Click(object sender, EventArgs e)
         {
             Order order = new Order(TextBoxAddress.Text, TextBoxCity.Text, TextBoxZip.Text, UserData.userID);
-            if (TextBoxAddress.Text != null && TextBoxCity != null && TextBoxZip != null)
+            if (TextBoxZip.AutoCompleteType == AutoCompleteType.HomeZipCode && TextBoxAddress.Text != null && TextBoxCity != null && TextBoxZip != null)
             {
                 order.Insert();
                 Server.Transfer("orderConfirmation.aspx");

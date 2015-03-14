@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using DAL.DataSetTableAdapters;
@@ -33,8 +35,15 @@ namespace DAL
 
         public void Insert()
         {
-            OrderHeadTableAdapter orderHeadTable = new OrderHeadTableAdapter();
-            orderHeadTable.Insert(UserID, long.Parse(Zip), Address, City, false);
+            try
+            {
+                OrderHeadTableAdapter orderHeadTable = new OrderHeadTableAdapter();
+                orderHeadTable.Insert(UserID, long.Parse(Zip), Address, City, false);
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
         }
         public override string ToString()
         {
