@@ -45,6 +45,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -147,7 +148,7 @@
   <ItemGroup>
     <Content Include="Bin-katalog\DAL.dll" />
     <Content Include="Bin-katalog\DAL.pdb" />
-    <Content Include="Pages\Kassorskan.aspx" />
+    <Content Include="Pages\Checkout.aspx" />
     <Content Include="MySession.aspx" />
     <Content Include="Pages\Collection.aspx" />
     <Content Include="Pages\About.aspx" />
@@ -169,6 +170,7 @@
     <Content Include="Images\AirBalloon.jpg" />
     <Content Include="Images\Watches\index.gif" />
     <Content Include="Images\Watches\indexLabel.jpg" />
+    <Content Include="Pages\orderConfirmation.aspx" />
     <Content Include="Styling\StyleSheet.css" />
     <Content Include="Styling\index.css" />
     <Content Include="Styling\index.html" />
@@ -300,12 +302,12 @@
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Pages\Kassorskan.aspx.cs">
-      <DependentUpon>Kassorskan.aspx</DependentUpon>
+    <Compile Include="Pages\Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Kassorskan.aspx.designer.cs">
-      <DependentUpon>Kassorskan.aspx</DependentUpon>
+    <Compile Include="Pages\Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="MySession.aspx.cs">
       <DependentUpon>MySession.aspx</DependentUpon>
@@ -356,6 +358,13 @@
       <DependentUpon>master.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Pages\orderConfirmation.aspx.cs">
+      <DependentUpon>orderConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\orderConfirmation.aspx.designer.cs">
+      <DependentUpon>orderConfirmation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>

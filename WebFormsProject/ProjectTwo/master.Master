@@ -17,14 +17,15 @@
                 <div id="navigation">
                     <ul id="nav">
                         <li><a href="Collection.aspx">Hem</a></li>
-                        <li><a href="Kassorskan.aspx">Gå till kassa</a></li>
+                        <li><a href="Checkout.aspx">Gå till kassa</a></li>
                     </ul>
                     <ul id="navRight">
                         <li><asp:Button ID="ButtonLogOut" runat="server" Text="LOGOUT" BorderStyle="None" OnClick="ButtonLogOut_Click" style="background: linear-gradient(to bottom, white, lightgray, gray)"/>
                         </li>
                         <li><asp:Label ID="Label1" runat="server"></asp:Label></li>
                         <li><asp:DropDownList ID="DropDownList1" runat="server">
-                            <asp:ListItem>Din varukorg</asp:ListItem></asp:DropDownList></li>
+                            <asp:ListItem>Din varukorg</asp:ListItem>
+                           <asp:ListItem><a href="Checkout.aspx">Gå till kassa</a></asp:ListItem></asp:DropDownList></li>
                     </ul>
                 </div>
                 <div id="content">

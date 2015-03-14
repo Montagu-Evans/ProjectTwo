@@ -18,11 +18,9 @@ namespace ProjectTwo
             {
                 dropDownList.Items.Add(item.ProductName + " Qty: " + item.Quantity);
             }
-            if (dropDownList.Items.Count > 1)
-            {
-                dropDownList.Items.Add("");
-                dropDownList.Items.Add("Gå till kassa");
-            }
+            if(dropDownList.Items.Count > 1)
+            { dropDownList.Items.Add("");
+            dropDownList.Items.Add("Gå till kassa");}
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
