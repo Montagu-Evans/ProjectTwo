@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DAL.DataSetTableAdapters;
 
 namespace DAL
 {
@@ -13,13 +9,14 @@ namespace DAL
         public string ProductName { get; set; }
         public decimal ProductPrice { get; set; }
 
-        public OrderRow(string productName="", decimal price=0, int articleID=0, int quantity=1)
+        public OrderRow(string productName = "", decimal price = 0, int articleID = 0, int quantity = 1)
         {
             ProductName = productName;
             ProductPrice = price;
             ArticleID = articleID;
             Quantity = quantity;
         }
+
         public override string ToString()
         {
             return string.Format("{0}, {1}, {2}, {3}", ArticleID, Quantity, ProductName, ProductPrice);

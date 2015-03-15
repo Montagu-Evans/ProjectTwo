@@ -15,15 +15,15 @@ namespace DAL
 {
     public static class UserData
     {
-        [ForeignKey("userID")]
         public static string userName;
         public static int userID;
         public static int Authenticate(string username, string password)
         {
             userName = username;
-            UsersTableAdapter users = new UsersTableAdapter();
+            var users = new UsersTableAdapter();
             var user = users.GetData(password, username);
             userID = 0;
+
             using (var conn = DB.GetSqlConnection())
             {
                 using (var command = conn.CreateCommand())
@@ -31,7 +31,7 @@ namespace DAL
                     command.CommandText = @"SELECT  [UserID] FROM [Clocks].[dbo].[Users] WHERE [Username] = @username AND [Password] = @password";
                     command.Parameters.Add("username", SqlDbType.NVarChar, 50).Value = username;
                     command.Parameters.Add("password", SqlDbType.NVarChar, 20).Value = password;
-                    SqlDataReader reader = command.ExecuteReader();
+                    var reader = command.ExecuteReader();
                     if (reader.Read())
                     {
                         userID = Load(reader);

@@ -149,8 +149,7 @@
     <Content Include="Bin-katalog\DAL.dll" />
     <Content Include="Bin-katalog\DAL.pdb" />
     <Content Include="Pages\Checkout.aspx" />
-    <Content Include="MySession.aspx" />
-    <Content Include="Pages\Collection.aspx" />
+    <Content Include="Pages\Default.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -303,19 +302,12 @@
     <Compile Include="Pages\Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MySession.aspx.cs">
-      <DependentUpon>MySession.aspx</DependentUpon>
+    <Compile Include="Pages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MySession.aspx.designer.cs">
-      <DependentUpon>MySession.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Collection.aspx.cs">
-      <DependentUpon>Collection.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Collection.aspx.designer.cs">
-      <DependentUpon>Collection.aspx</DependentUpon>
+    <Compile Include="Pages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

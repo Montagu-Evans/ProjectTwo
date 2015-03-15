@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Windows.Forms;
 using DAL;
-using DataSet = DAL.DataSet;
 
 namespace ProjectTwo
 {
@@ -17,7 +9,6 @@ namespace ProjectTwo
         private DropDownList dropDownList;
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Master != null) dropDownList = (DropDownList)Master.FindControl("DropDownList1");
             dropDownList.Items.Clear();
             dropDownList.Items.Add("Din varukorg");
@@ -27,19 +18,32 @@ namespace ProjectTwo
             {
                 dropDownList.Items.Add(item.ProductName + " Qty: " + item.Quantity);
             }
-            if (dropDownList.Items.Count > 1)
-            {
-                dropDownList.Items.Add("");
-                dropDownList.Items.Add("Gå till kassa");
-            }
         }
 
         protected void ButtonOrder_Click(object sender, EventArgs e)
         {
-            Order order = new Order(TextBoxAddress.Text, TextBoxCity.Text, TextBoxZip.Text, UserData.userID);
+            var order = (Order)Session["order"];
+            order.Address = TextBoxAddress.Text;
+            order.City = TextBoxCity.Text;
+            order.Zip = TextBoxZip.Text;
+            order.UserID = UserData.userID;
+            
+            order.Insert();
+            var orderID = order.GetOrderID();
+            
+            InsertCheckout(orderID);
+            order = new Order(userID: UserData.userID);
+        }
+
+        private void InsertCheckout(int orderID)
+        {
+            var order = (Order)Session["order"];
+            order.OrderID = orderID;
+            var webShopDal = new WebShopDAL();
+
             if (TextBoxAddress.Text != null && TextBoxCity != null && TextBoxZip != null)
             {
-                order.Insert();
+                webShopDal.AddorderToDB(order);
                 Server.Transfer("orderConfirmation.aspx");
             }
         }

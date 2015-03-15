@@ -34,7 +34,8 @@
             <td class="auto-style7">Postkod:</td>
             <td class="auto-style8">
                 <asp:TextBox ID="TextBoxZip" runat="server" TextMode="Number" AutoCompleteType="HomeZipCode"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxZip" ErrorMessage="Skriv in postkod" ForeColor="Red">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxZip" ErrorMessage="Skriv in postkod" ForeColor="Red" Display="Dynamic">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxZip" Display="Dynamic" ErrorMessage="Enbart siffror och mellanslag" ForeColor="Red" ValidationExpression="^[0-9]{5}$">*</asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -47,7 +48,7 @@
         <tr>
             <td class="auto-style3">
                 &nbsp;</td>
-            <td class="auto-style4">&nbsp;<asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
+            <td class="auto-style4">&nbsp;<asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" CssClass="clean-list" />
                 <asp:Button ID="ButtonOrder" runat="server" Text="Beställ order" OnClick="ButtonOrder_Click" />
             </td>
         </tr>
