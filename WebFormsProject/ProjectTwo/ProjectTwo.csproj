@@ -161,11 +161,9 @@
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\AirBalloon.jpg" />
     <Content Include="Images\Watches\index.gif" />
     <Content Include="Images\Watches\indexLabel.jpg" />
     <Content Include="Pages\orderConfirmation.aspx" />

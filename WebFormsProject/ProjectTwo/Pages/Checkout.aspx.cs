@@ -37,22 +37,11 @@ namespace ProjectTwo
         protected void ButtonOrder_Click(object sender, EventArgs e)
         {
             Order order = new Order(TextBoxAddress.Text, TextBoxCity.Text, TextBoxZip.Text, UserData.userID);
-            if (TextBoxZip.AutoCompleteType == AutoCompleteType.HomeZipCode && TextBoxAddress.Text != null && TextBoxCity != null && TextBoxZip != null)
+            if (TextBoxAddress.Text != null && TextBoxCity != null && TextBoxZip != null)
             {
                 order.Insert();
                 Server.Transfer("orderConfirmation.aspx");
             }
-        }
-
-        private void btnSave_Click(object sender, System.EventArgs e)
-        {
-            //SqlCommand command = new SqlCommand();
-            //command.Parameters["@categoryid"].Value = ddlCategoryID.SelectedItem.Text;
-            //command.Parameters["@categoryname"].Value = txtCategoryName.Text;
-            //command.Parameters["@categorydescription"].Value = txtCategoryDescription.Text;
-            //sqlConnection1.Open();
-            //cmdCategoriesUpdate.ExecuteNonQuery();
-            //sqlConnection1.Close();
         }
     }
 }
