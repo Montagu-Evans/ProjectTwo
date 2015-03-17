@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Security;
 using System.Web.UI;
 using DAL;
 using DAL.DataSetTableAdapters;
@@ -16,11 +17,16 @@ namespace ProjectTwo
         {
             var usersTable = new UsersTableAdapter();
             var user = UserData.Authenticate(TextBoxUserName.Text, TextBoxPassword.Text);
-            var order = (Order) Session["order"];
+            var order = (Order)Session["order"];
             if (user > 0)
             {
                 order.UserID = user;
-                Server.Transfer("Default.aspx"); 
+                Server.Transfer("Default.aspx");
+            }
+
+            else
+            {
+                LabelLoginMessage.Text = "Du skrev in fel användarnamn eller fel lösenord!";
             }
         }
     }

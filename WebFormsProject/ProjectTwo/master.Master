@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="ProjectTwo.master" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.Master.cs" Inherits="ProjectTwo.Master" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,9 @@
     <form id="form1" runat="server">
         <div>
             <div id="wrapper">
-                <div id="banner">Global Watches</div>
+                <div id="banner">
+                    
+                </div>
                 <div id="navigation">
                     <ul id="nav">
                         <li><a href="Default.aspx">Hem</a></li>
@@ -23,7 +25,7 @@
                         <li><asp:Button ID="ButtonLogOut" runat="server" Text="LOGOUT" BorderStyle="None" OnClick="ButtonLogOut_Click" style="background: linear-gradient(to bottom, white, lightgray, gray)" CausesValidation="False"/>
                         </li>
                         <li><asp:Label ID="Label1" runat="server"></asp:Label></li>
-                        <li><asp:DropDownList ID="DropDownList1" runat="server">
+                        <li><asp:DropDownList ID="DropDownList1" runat="server" style="margin-left: 0px" Width="230px">
                             <asp:ListItem>Din varukorg</asp:ListItem>
                             </asp:DropDownList>
                         </li>

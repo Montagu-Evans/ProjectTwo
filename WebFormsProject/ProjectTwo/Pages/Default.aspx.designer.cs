@@ -10,7 +10,7 @@
 namespace ProjectTwo {
     
     
-    public partial class Collection {
+    public partial class Default {
         
         /// <summary>
         /// GridView1 control.

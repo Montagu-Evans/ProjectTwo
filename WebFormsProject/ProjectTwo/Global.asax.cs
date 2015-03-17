@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 using System.Web.UI;
 using DAL;
 
@@ -14,13 +9,22 @@ namespace ProjectTwo
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            //ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            Order order = new Order();
-            Session["order"] = new Order();
+            try
+            {
+                Order order = new Order();
+                Session["order"] = new Order();
+            }
+            catch (Exception)
+            {
+                
+                throw new Exception();
+            }
+            
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -35,7 +39,11 @@ namespace ProjectTwo
 
         protected void Application_Error(object sender, EventArgs e)
         {
-
+            var error = Server.GetLastError();
+            Session["ErrorMessage"] = error.Message;
+            Server.ClearError();
+            Response.Redirect("ErrorPage.aspx");
+            
         }
 
         protected void Session_End(object sender, EventArgs e)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using DAL.DataSetTableAdapters;
-using DataSet = DAL; 
+using DataSet = DAL;
 
 namespace DAL
 {
@@ -17,8 +17,7 @@ namespace DAL
         public int UserID { get; set; }
         public int OrderID { get; set; }
 
-
-        public Order(string address = "", string city="", string zip="", int userID=0)
+        public Order(string address = "", string city = "", string zip = "", int userID = 0)
         {
             OrderRows = new List<OrderRow>();
             Address = address;
@@ -29,15 +28,8 @@ namespace DAL
 
         public void Insert()
         {
-            try
-            {
-                var orderHeadTable = new OrderHeadTableAdapter();
-                orderHeadTable.Insert(UserID, long.Parse(Zip), Address, City, false);
-            }
-            catch (Exception)
-            {
-                throw new Exception();
-            }
+            var orderHeadTable = new OrderHeadTableAdapter();
+            orderHeadTable.Insert(UserID, long.Parse(Zip), Address, City, false);
         }
 
         public int GetOrderID()
@@ -71,7 +63,7 @@ namespace DAL
             {
                 order += orderRow + "\r\n";
             }
-            return string.Format("Address: {0},\tCity: {1},\tZip: {2},\tOrder: {3}", Address, City, Zip, order);
+            return string.Format("Order: {0}\r\n", order);
         }
     }
 }

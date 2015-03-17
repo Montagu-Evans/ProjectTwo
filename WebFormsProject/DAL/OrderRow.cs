@@ -9,6 +9,11 @@ namespace DAL
         public string ProductName { get; set; }
         public decimal ProductPrice { get; set; }
 
+        public decimal Sum
+        {
+            get { return Quantity*ProductPrice; }
+        }
+
         public OrderRow(string productName = "", decimal price = 0, int articleID = 0, int quantity = 1)
         {
             ProductName = productName;
@@ -19,7 +24,7 @@ namespace DAL
 
         public override string ToString()
         {
-            return string.Format("{0}, {1}, {2}, {3}", ArticleID, Quantity, ProductName, ProductPrice);
+            return string.Format("{0}, {1}, {2}, {3}, {4}", ArticleID, Quantity, ProductName, ProductPrice, Sum);
         }
     }
 }

@@ -10,7 +10,7 @@
 namespace ProjectTwo {
     
     
-    public partial class master {
+    public partial class Master {
         
         /// <summary>
         /// head control.

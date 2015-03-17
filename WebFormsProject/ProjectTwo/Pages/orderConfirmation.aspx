@@ -1,6 +1,34 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="orderConfirmation.aspx.cs" Inherits="ProjectTwo.Pages.orderConfirmation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="OrderConfirmation.aspx.cs" Inherits="ProjectTwo.Pages.OrderConfirmation" %>
+
+<%@ Import Namespace="DAL" %>
+<%@ Import Namespace="ProjectTwo.Pages" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 50%;
+        }
+        .auto-style2 {
+            width: 135px;
+        }
+        .auto-style3 {
+            width: 199px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    Tack för din beställning!<br />
+    <h1><strong>Tack för din beställning,
+    <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>!</strong></h1>
+    <div id="">
+        <h3>Din order behandlas på vårt lager och kommer att skickas till dig inom kort!</h3>
+    </div>
+
+    <h3>Du har väl inte missat att vi erbjuder kostnadsfritt byte? <strong>Mer info hittar du på vår hemsida. Som du är på just nu! *zMajL*</strong></h3>
+    <h3><strong>Och kom ihåg - hos oss på
+        <asp:HyperLink runat="server" NavigateUrl="Default.aspx">Global Watches</asp:HyperLink>
+        hittar du våra senaste nyheter!</strong></h3>
+    <h3><strong>Vänligen kontakta alltid vår
+        <asp:HyperLink runat="server" NavigateUrl="Login.aspx">kundtjänst</asp:HyperLink>
+        vid felexpedition eller reklamation så att vi kan göra vårt yttersta för att hjälpa dig och se till att problemet uppstår igen!</strong></h3>
+
 </asp:Content>

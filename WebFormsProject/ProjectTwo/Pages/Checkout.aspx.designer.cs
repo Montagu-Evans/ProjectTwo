@@ -10,7 +10,7 @@
 namespace ProjectTwo {
     
     
-    public partial class Kassorskan {
+    public partial class Checkout {
         
         /// <summary>
         /// TextBoxAddress control.

@@ -148,6 +148,9 @@
   <ItemGroup>
     <Content Include="Bin-katalog\DAL.dll" />
     <Content Include="Bin-katalog\DAL.pdb" />
+    <Content Include="Pages\ErrorPage.aspx" />
+    <Content Include="Images\loggaProjectTwo.png" />
+    <Content Include="Images\Mario.png" />
     <Content Include="Pages\Checkout.aspx" />
     <Content Include="Pages\Default.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -165,17 +168,15 @@
     <Content Include="Global.asax" />
     <Content Include="Images\Watches\index.gif" />
     <Content Include="Images\Watches\indexLabel.jpg" />
-    <Content Include="Pages\orderConfirmation.aspx" />
+    <Content Include="Pages\OrderConfirmation.aspx" />
     <Content Include="Styling\StyleSheet.css" />
-    <Content Include="Styling\index.css" />
-    <Content Include="Styling\index.html" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="master.Master" />
+    <Content Include="Master.Master" />
     <Content Include="Bin-katalog\DAL.dll.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -211,7 +212,6 @@
     <Content Include="Styling\Login.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Images\Watches\armani.jpg" />
-    <Content Include="Images\Watches\banner.jpg" />
     <Content Include="Images\Watches\Commodore_LED_Watch.jpg" />
     <Content Include="Images\Watches\devon-tread-1-watch.jpg" />
     <Content Include="Images\Watches\gant.jpg" />
@@ -222,7 +222,6 @@
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -295,6 +294,13 @@
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Pages\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Checkout.aspx.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -322,29 +328,22 @@
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="master.Master.cs">
-      <DependentUpon>master.Master</DependentUpon>
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="master.Master.designer.cs">
-      <DependentUpon>master.Master</DependentUpon>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Pages\orderConfirmation.aspx.cs">
-      <DependentUpon>orderConfirmation.aspx</DependentUpon>
+    <Compile Include="Pages\OrderConfirmation.aspx.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\orderConfirmation.aspx.designer.cs">
-      <DependentUpon>orderConfirmation.aspx</DependentUpon>
+    <Compile Include="Pages\OrderConfirmation.aspx.designer.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
