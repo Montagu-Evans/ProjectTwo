@@ -49,7 +49,7 @@ namespace ProjectTwo
             var order = (Order)Session["order"];
             order.OrderID = orderID;
 
-            if (TextBoxAddress.Text != null && TextBoxCity != null && TextBoxZip != null)
+            if (TextBoxAddress.Text != null && TextBoxCity.Text != null && TextBoxZip.Text != null && TextBoxName.Text != null && TextBoxEmail.Text != null)
             {
                 Server.Transfer("OrderConfirmation.aspx");
             }

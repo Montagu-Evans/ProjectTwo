@@ -62,12 +62,32 @@
             width: 194px;
         }
 
+        .auto-style20 {
+            text-decoration: underline;
+            width: 137px;
+            height: 30px;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style1">
         <tr>
-            <td class="auto-style7"><strong>Adress:</strong></td>
+            <td class="auto-style20"><strong>Namn</strong></td>
+            <td class="auto-style8">
+                <asp:TextBox ID="TextBoxName" runat="server" style="margin-bottom: 0px" AutoCompleteType="HomeStreetAddress" Font-Names="Comic Sans MS"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxName" ErrorMessage="Skriv in namn" ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style7"><strong>E-post</strong></td>
+            <td class="auto-style8">
+                <asp:TextBox ID="TextBoxEmail" runat="server" style="margin-bottom: 0px" AutoCompleteType="HomeStreetAddress" Font-Names="Comic Sans MS" TextMode="Email"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Skriv in E-post" ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style7"><strong>Adress</strong></td>
             <td class="auto-style8">
                 <asp:TextBox ID="TextBoxAddress" runat="server" style="margin-bottom: 0px" AutoCompleteType="HomeStreetAddress" Font-Names="Comic Sans MS"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxAddress" ErrorMessage="Skriv in adress" ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -114,8 +134,7 @@
         <td class="auto-style16"><strong>Pris</strong></td>
         <td class="auto-style15"><strong>Antal</strong> </td>
         </tr>
-        <% decimal sum = 0; %>
-        <% foreach (var orderRow in ((Order) Session["order"]).OrderRows)
+        <% decimal sum = 0; %>        <% foreach (var orderRow in ((Order) Session["order"]).OrderRows)
            {
                sum += orderRow.Sum;
         %>
