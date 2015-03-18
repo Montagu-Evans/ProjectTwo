@@ -18,6 +18,7 @@ namespace ProjectTwo
 
                 if (!IsPostBack)
                 {
+                    dropDownList.Items.Add("Din varukorg: " + order.OrderRows.Count);
                     foreach (var item in order.OrderRows)
                     {
                         dropDownList.Items.Add(item.ProductName + " Qty: " + item.Quantity);
@@ -28,7 +29,6 @@ namespace ProjectTwo
             {
                 throw new Exception();
             }
-            
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e) //Denna metoden lägger till en produkt till ordern. Denna har vi felhanterat
@@ -39,8 +39,8 @@ namespace ProjectTwo
                 const bool increaseQuantity = false;
                 var order = (Order)Session["order"];
                 var row = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
-                var product = row.Cells[0].Text;
-                var price = decimal.Parse(row.Cells[1].Text);
+                var product = row.Cells[1].Text;
+                var price = decimal.Parse(row.Cells[2].Text);
 
                 var dal = new WebShopDAL();
                 dal.GetArticleID(product);
@@ -51,11 +51,11 @@ namespace ProjectTwo
             {
                 throw new Exception("What the fuuuuuuck?");
             }
-           
         }
 
         private void CheckDropdownList(Order order, string product, bool increaseQuantity, decimal price, WebShopDAL dal)
         {
+            OrderRow orderRow2 = new OrderRow();
             if (order.OrderRows != null)
             {
                 foreach (var orderRow in order.OrderRows)
@@ -74,7 +74,8 @@ namespace ProjectTwo
            
             if (order.OrderRows != null)
             {
-                dropDownList.Items.Add("Varukorg: " + order.OrderRows.Count);
+                dropDownList.Items.Add("Din varukorg: " + order.OrderRows.Count);
+                
                 foreach (var item in order.OrderRows)
                 {
                     dropDownList.Items.Add(item.ProductName + " Qty: " + item.Quantity);

@@ -20,19 +20,27 @@ namespace ProjectTwo
             }
         }
 
-        protected void ButtonOrder_Click(object sender, EventArgs e) //Här 
+        protected void ButtonOrder_Click(object sender, EventArgs e)
         {
+            
             var order = (Order)Session["order"];
-            order.Address = TextBoxAddress.Text;
-            order.City = TextBoxCity.Text;
-            order.Zip = TextBoxZip.Text;
-            order.UserID = UserData.userID;
+            if (order.OrderRows != null && order.OrderRows.Count > 0)
+            {
+                order.Address = TextBoxAddress.Text;
+                order.City = TextBoxCity.Text;
+                order.Zip = TextBoxZip.Text;
+                order.UserID = UserData.userID;
 
-            order.Insert();
-            var orderID = order.GetOrderID();
+                order.Insert();
+                var orderID = order.GetOrderID();
 
-            InsertCheckout(orderID);
-            order = new Order(userID: UserData.userID);
+                InsertCheckout(orderID);
+                order = new Order(userID: UserData.userID);
+            }
+            else
+            {
+                Label2.Text = "Din varukorg är tom, vänligen lägg till för att beställa!";
+            }
 
         }
 

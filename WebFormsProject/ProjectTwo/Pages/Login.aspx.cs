@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Mime;
 using System.Web.Security;
 using System.Web.UI;
 using DAL;
@@ -26,6 +27,7 @@ namespace ProjectTwo
 
             else
             {
+                if(TextBoxUserName.Text != null && TextBoxPassword.Text != null && TextBoxUserName.Text != "" && TextBoxPassword.Text != "")
                 LabelLoginMessage.Text = "Du skrev in fel användarnamn eller fel lösenord!";
             }
         }

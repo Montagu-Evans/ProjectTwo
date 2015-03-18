@@ -16,6 +16,21 @@ input {
 }
 
 #loginWrap {
-    margin: 0 auto;
-    padding-left: 12px;
+    margin: auto;
+    margin-top: 15%;
+    background: #808080;
+    width: 19.8%;
+    height: 270px;
+    padding: 0 20px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    opacity: 0.94;
+
 }
+
+td ul {
+    list-style-type: none;
+    margin-left: -40px;
+    margin-top: 40px;
+}
+

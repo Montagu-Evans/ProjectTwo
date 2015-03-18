@@ -148,6 +148,7 @@
   <ItemGroup>
     <Content Include="Bin-katalog\DAL.dll" />
     <Content Include="Bin-katalog\DAL.pdb" />
+    <Content Include="Images\Watches\rolexNEW.jpg" />
     <Content Include="Pages\ErrorPage.aspx" />
     <Content Include="Images\loggaProjectTwo.png" />
     <Content Include="Images\Mario.png" />

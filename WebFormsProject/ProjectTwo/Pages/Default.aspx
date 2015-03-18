@@ -5,14 +5,18 @@
 
 
     <div class="Armani">
-        <p>&nbsp;</p>
+        &nbsp;&nbsp;&nbsp;
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
-   BorderColor="#336699" BorderStyle="Solid" BorderWidth="2px"
+   BorderColor="White" BorderStyle="Solid" BorderWidth="20px"
    CellPadding="4"
-   DataSourceID="SqlDataSource2" ForeColor="#333333" Width="971px" OnRowCommand="GridView1_RowCommand">
+   DataSourceID="SqlDataSource2" ForeColor="#333333" Width="926px" OnRowCommand="GridView1_RowCommand" Height="344px" style="margin-left: 26px; margin-top: 0px">
                 
    <Columns>
-
+       <asp:TemplateField>
+           <ItemTemplate>
+               <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Watches/rolexNEW.jpg" Width="140px" />
+           </ItemTemplate>
+       </asp:TemplateField>
       <asp:BoundField DataField="Text"  HeaderText="Produkt"
          SortExpression="Text" />
 
@@ -20,9 +24,12 @@
                         
        <asp:TemplateField>
            <ItemTemplate>
-               <asp:LinkButton runat="server" Text="add"></asp:LinkButton>
+               <asp:LinkButton runat="server" Text="Lägg till"></asp:LinkButton>
            </ItemTemplate>
        </asp:TemplateField>
+                        
+
+       
                         
 
    </Columns>
