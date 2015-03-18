@@ -34,7 +34,7 @@
         <asp:Label ID="Label1" runat="server" Text="Användarnamn: " Font-Names="Comic Sans MS" Font-Underline="True" ForeColor="White"></asp:Label>
                 </td>
                 <td class="auto-style8">
-        <asp:TextBox ID="TextBoxUserName" runat="server" Height="16px" Font-Names="Comic Sans MS"></asp:TextBox>
+        <asp:TextBox ID="TextBoxUserName" runat="server" Height="16px" Font-Names="Comic Sans MS" BorderStyle="Inset"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxUserName" ErrorMessage="Skriv in användarnamn" ForeColor="Red" ValidateRequestMode="Enabled">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -43,7 +43,7 @@
             <asp:Label ID="Label2" runat="server" Text="Lösenord: " Font-Bold="False" Font-Names="Comic Sans MS" Font-Underline="True" ForeColor="White"></asp:Label>
                 </td>
                 <td class="auto-style8">
-            <asp:TextBox ID="TextBoxPassword" runat="server" Height="16px" TextMode="Password" Font-Names="Comic Sans MS"></asp:TextBox>
+            <asp:TextBox ID="TextBoxPassword" runat="server" Height="16px" TextMode="Password" Font-Names="Comic Sans MS" BorderStyle="Inset"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxPassword" ForeColor="Red" ErrorMessage="Skriv in lösenord">*</asp:RequiredFieldValidator>
                 </td>
             </tr>

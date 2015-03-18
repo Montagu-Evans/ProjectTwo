@@ -67,16 +67,30 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style1">
         <tr>
+            <td class="auto-style7"><strong>Namn:</strong></td>
+            <td class="auto-style8">
+                <asp:TextBox ID="TextBoxName" runat="server" Height="20px" Width="193px" BorderColor="#666666" BorderStyle="Inset" BorderWidth="2px" Font-Names="Comic Sans MS" Font-Size="Medium" ForeColor="#4F5142"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Fyll i namn" ForeColor="Red" Font-Names="Comic Sans MS" ControlToValidate="TextBoxName">*</asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style7"><strong>Email:</strong></td>
+            <td class="auto-style8">
+                <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email" Height="20px" Width="193px" BorderColor="#666666" BorderStyle="Inset" BorderWidth="2px" Font-Names="Comic Sans MS" Font-Size="Medium" ForeColor="#4F5142"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Fyll i e-post" ForeColor="Red" Font-Names="Comic Sans MS" ControlToValidate="TextBoxEmail">*</asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
             <td class="auto-style7"><strong>Adress:</strong></td>
             <td class="auto-style8">
-                <asp:TextBox ID="TextBoxAddress" runat="server" style="margin-bottom: 0px" AutoCompleteType="HomeStreetAddress" Font-Names="Comic Sans MS"></asp:TextBox>
+                <asp:TextBox ID="TextBoxAddress" runat="server" style="margin-bottom: 0px" AutoCompleteType="HomeStreetAddress" Font-Names="Comic Sans MS" Height="20px" Width="193px" BorderColor="#666666" BorderStyle="Inset" BorderWidth="2px" Font-Size="Medium" ForeColor="#4F5142"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxAddress" ErrorMessage="Skriv in adress" ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style7"><strong>Postkod:</strong></td>
             <td class="auto-style8">
-                <asp:TextBox ID="TextBoxZip" runat="server" AutoCompleteType="HomeZipCode" Font-Names="Comic Sans MS"></asp:TextBox>
+                <asp:TextBox ID="TextBoxZip" runat="server" AutoCompleteType="HomeZipCode" Font-Names="Comic Sans MS" Height="20px" Width="193px" BorderColor="#666666" BorderStyle="Inset" BorderWidth="2px" Font-Size="Medium" ForeColor="#4F5142"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxZip" ErrorMessage="Skriv in postkod" ForeColor="Red" Display="Dynamic">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxZip" Display="Dynamic" ErrorMessage="Enbart siffror och mellanslag" ForeColor="Red" ValidationExpression="^[0-9]{5}$">*</asp:RegularExpressionValidator>
             </td>
@@ -84,7 +98,7 @@
         <tr>
             <td class="auto-style7"><strong>Postort:</strong></td>
             <td class="auto-style8">
-                <asp:TextBox ID="TextBoxCity" runat="server" AutoCompleteType="HomeCity" Font-Names="Comic Sans MS"></asp:TextBox>
+                <asp:TextBox ID="TextBoxCity" runat="server" AutoCompleteType="HomeCity" Font-Names="Comic Sans MS" Height="20px" Width="193px" BorderColor="#666666" BorderStyle="Inset" BorderWidth="2px" Font-Size="Medium" ForeColor="#4F5142"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxCity" ErrorMessage="Skriv in postort " ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -110,12 +124,11 @@
     <h2>Din orderspecifikation</h2>
     <table class="auto-style1">
         <tr class="auto-style2">
-            <td class="auto-style18"><strong>Produkt</strong"> </td> 
+            <td class="auto-style18"><strong>Produkt</strong> </td> 
         <td class="auto-style16"><strong>Pris</strong></td>
         <td class="auto-style15"><strong>Antal</strong> </td>
         </tr>
-        <% decimal sum = 0; %>
-        <% foreach (var orderRow in ((Order) Session["order"]).OrderRows)
+        <% decimal sum = 0; %>        <% foreach (var orderRow in ((Order) Session["order"]).OrderRows)
            {
                sum += orderRow.Sum;
         %>
