@@ -62,11 +62,18 @@
             width: 194px;
         }
 
+        .auto-style20 {
+            text-decoration: underline;
+            width: 137px;
+            height: 30px;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style1">
         <tr>
+<<<<<<< HEAD
             <td class="auto-style7"><strong>Namn:</strong></td>
             <td class="auto-style8">
                 <asp:TextBox ID="TextBoxName" runat="server" Height="20px" Width="193px" BorderColor="#666666" BorderStyle="Inset" BorderWidth="2px" Font-Names="Comic Sans MS" Font-Size="Medium" ForeColor="#4F5142"></asp:TextBox>
@@ -82,6 +89,23 @@
         </tr>
         <tr>
             <td class="auto-style7"><strong>Adress:</strong></td>
+=======
+            <td class="auto-style20"><strong>Namn</strong></td>
+            <td class="auto-style8">
+                <asp:TextBox ID="TextBoxName" runat="server" style="margin-bottom: 0px" AutoCompleteType="HomeStreetAddress" Font-Names="Comic Sans MS"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxName" ErrorMessage="Skriv in namn" ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style7"><strong>E-post</strong></td>
+            <td class="auto-style8">
+                <asp:TextBox ID="TextBoxEmail" runat="server" style="margin-bottom: 0px" AutoCompleteType="HomeStreetAddress" Font-Names="Comic Sans MS" TextMode="Email"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Skriv in E-post" ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style7"><strong>Adress</strong></td>
+>>>>>>> ebbf7b56e6d15da5bd6ce851ff2e98bf99cedb3e
             <td class="auto-style8">
                 <asp:TextBox ID="TextBoxAddress" runat="server" style="margin-bottom: 0px" AutoCompleteType="HomeStreetAddress" Font-Names="Comic Sans MS" Height="20px" Width="193px" BorderColor="#666666" BorderStyle="Inset" BorderWidth="2px" Font-Size="Medium" ForeColor="#4F5142"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxAddress" ErrorMessage="Skriv in adress" ForeColor="Red">*</asp:RequiredFieldValidator>
